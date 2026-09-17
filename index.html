@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceForge Enterprise Pro | Client-Side Fiscal Analytics Suite</title>
+    <meta name="description" content="Access free financial analytics engines for compound interest modeling, mortgage scheduling, options position sizing, and progressive tax accounting.">
+    <meta name="keywords" content="financial calculators, mortgage amortization, compound interest, options calculator, position sizing, tax estimator">
+    <script src="https://jsdelivr.net"></script>
+    <script src="https://jsdelivr.net"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <header class="bg-slate-950 border-b border-slate-800/80 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-xl font-black text-slate-950 shadow-md">📊</div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-white">FINANCE<span class="text-blue-400">FORGE</span></span>
+                    <span class="block text-[10px] text-cyan-400 font-mono tracking-widest uppercase">High-Volume Analytics Matrix</span>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-slate-400">
+                <a href="#compound-section" class="px-4 py-2 rounded-lg hover:text-white transition-all">Wealth</a>
+                <a href="#mortgage-section" class="px-4 py-2 rounded-lg hover:text-white transition-all">Credit</a>
+                <a href="#trading-section" class="px-4 py-2 rounded-lg hover:text-white transition-all">Market</a>
+                <a href="#tax-section" class="px-4 py-2 rounded-lg hover:text-white transition-all">Fiscal</a>
+            </nav>
+            <div class="font-mono text-[11px] text-slate-500 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 hidden sm:block">STATUS: COMPUTE_ONLINE</div>
+        </div>
+    </header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <div class="adsense-container bg-slate-950 border border-slate-800 rounded-2xl p-4 text-center text-xs font-mono text-slate-500 min-h-[90px] flex flex-col justify-center items-center gap-1">
+            <span class="text-slate-400 font-bold uppercase text-[9px] tracking-widest">[DATA-AD-CLIENT-ZONE: TOP_LEADERBOARD_728X90_ASYNC]</span>
+            <span class="text-slate-600 font-mono text-[10px]">&lt;ins class="adsbygoogle" style="display:inline-block" data-ad-slot="0000000"&gt;&lt;/ins&gt;</span>
+        </div>
+    </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-3 space-y-12">
+            <section id="compound-section" class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                    <span class="text-3xl bg-blue-500/10 p-2 rounded-xl text-blue-400">📈</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-white tracking-tight">Compound Interest Analytics Core</h2>
+                        <p class="text-xs text-slate-400">High-fidelity multi-frequency compounding future asset trajectory simulation matrix.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 xl:grid-cols-5 gap-8">
+                    <div class="xl:col-span-2 space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Initial Capital Base ($)</label>
+                            <input type="number" id="inv-principal" value="100000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-blue-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Periodic Deposit ($)</label>
+                                <input type="number" id="inv-periodic" value="2500" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Interval</label>
+                                <select id="inv-periodic-freq" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:border-blue-500">
+                                    <option value="12">Monthly Slices</option>
+                                    <option value="1">Annual Slices</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Return Rate (%)</label>
+                                <input type="number" id="inv-rate" value="10.25" step="0.05" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Horizon (Years)</label>
+                                <input type="number" id="inv-years" value="20" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-3 flex flex-col justify-between space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+                                <span class="block text-[9px] font-mono uppercase text-slate-500">Terminal Maturity Value</span>
+                                <span id="out-inv-total" class="text-xl font-black font-mono text-blue-400 mt-1 block">$0.00</span>
+                            </div>
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+                                <span class="block text-[9px] font-mono uppercase text-slate-500">Net Dividends Accrued</span>
+                                <span id="out-inv-interest" class="text-xl font-black font-mono text-emerald-400 mt-1 block">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="h-56 w-full bg-slate-900 rounded-xl border border-slate-800 p-3 relative">
+                            <canvas id="chartInvestmentTimelineMaster"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="mortgage-section" class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                    <span class="text-3xl bg-indigo-500/10 p-2 rounded-xl text-indigo-400">🏡</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-white tracking-tight">Structured Mortgage Amortization Matrix</h2>
+                        <p class="text-xs text-slate-400">Generates precise interest drag calculations over fixed timelines.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Asset Capital Value Cost ($)</label>
+                            <input type="number" id="loan-asset" value="500000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-indigo-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Down Payment ($)</label>
+                                <input type="number" id="loan-down" value="100000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Fixed Agreement Rate (%)</label>
+                                <input type="number" id="loan-rate" value="6.5" step="0.01" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 flex flex-col justify-between space-y-4">
+                        <div class="text-center bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <span class="block text-[10px] font-mono text-slate-500 uppercase">P&I Net Monthly Obligation</span>
+                            <span id="out-loan-monthly" class="text-3xl font-black text-indigo-400 font-mono mt-1 block">$0.00</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                                <span class="block text-[9px] font-mono text-slate-500 uppercase">Principal Financed</span>
+                                <span id="out-loan-principal" class="text-sm font-bold text-slate-300 font-mono block mt-0.5">$0.00</span>
+                            </div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                                <span class="block text-[9px] font-mono text-slate-500 uppercase">Lifetime Interest Cost</span>
+                                <span id="out-loan-interest" class="text-sm font-bold text-rose-500 font-mono block mt-0.5">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="trading-section" class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                    <span class="text-3xl bg-amber-500/10 p-2 rounded-xl text-amber-400">⚡</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-white tracking-tight">Risk Sizing & Equity Position Vector Engine</h2>
+                        <p class="text-xs text-slate-400">Calculates proper block contract sizing based on hard structural asset limits.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Liquid Account Equity Pool ($)</label>
+                            <input type="number" id="trade-equity" value="50000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-amber-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Risk Threshold Max (%)</label>
+                                <input type="number" id="trade-pct" value="2.0" step="0.1" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Asset Entry Target ($)</label>
+                                <input type="number" id="trade-entry" value="120" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-amber-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Invalidation Stop Loss ($)</label>
+                            <input type="number" id="trade-stop" value="114" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-amber-500">
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 flex flex-col justify-center space-y-4 text-center">
+                        <div>
+                            <span class="block text-xs uppercase text-slate-500 font-bold font-mono">Maximum Allocated Contract Sizing</span>
+                            <span id="out-trade-units" class="text-4xl font-black text-white font-mono block mt-1">0 Units</span>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4">
+                            <span class="block text-xs uppercase text-slate-500 font-bold font-mono">Total Capital Deployment Exposure</span>
+                            <span id="out-trade-exposure" class="text-2xl font-black text-amber-500 font-mono block mt-1">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="tax-section" class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-800">
+                    <span class="text-3xl bg-purple-500/10 p-2 rounded-xl text-purple-400">👔</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-white tracking-tight">Progressive Fiscal Income Deductor Engine</h2>
+                        <p class="text-xs text-slate-400">Processes gross payroll components against real effective multi-tier bracket limits.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Gross Annual Baseline Revenue ($)</label>
+                            <input type="number" id="tax-gross" value="135000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold font-mono uppercase text-slate-400 mb-1.5">Pre-Tax Withholding Allocations ($)</label>
+                            <input type="number" id="tax-shelter" value="18500" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 font-mono text-white focus:border-purple-500">
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 text-white rounded-2xl border border-slate-800 p-6 font-mono text-xs space-y-3 shadow-inner">
+                        <div class="flex justify-between border-b border-slate-800 pb-2"><span class="text-slate-400">Adjusted Gross Income (AGI):</span><span id="out-tax-agi" class="text-slate-200 font-bold">$0.00</span></div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2"><span class="text-rose-400">Computed Tax Liabilities:</span><span id="out-tax-liability" class="text-rose-400 font-bold">-$0.00</span></div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2 text-sm pt-1"><span class="text-emerald-400 font-black">Net Annual Cash Flow:</span><span id="out-tax-net-annual" class="text-emerald-400 font-black">$0.00</span></div>
+                        <div class="flex justify-between text-slate-400 pt-1"><span>Net Monthly Real Availability:</span><span id="out-tax-net-monthly" class="text-blue-400 font-bold">$0.00</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <aside class="space-y-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sticky top-28 space-y-6 shadow-2xl">
+                <h3 class="text-xs font-mono font-bold tracking-widest text-slate-500 uppercase text-center">Premium Placements</h3>
+                <div class="adsense-container bg-slate-900/40 border border-slate-800 border-dashed rounded-xl p-4 text-center font-mono text-slate-600 text-[10px] min-h-[450px] flex items-center justify-center">
+                    [ADSENSE SKY_300X600_DYNAMIC_ASYNCHRONOUS_REVENUE_RAIL]
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer class="bg-slate-950 border-t border-slate-800 mt-24 py-12 text-center text-xs font-mono text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <p>&copy; 2026 FinanceForge Global static application pipelines framework.</p>
+            <div class="adsense-container max-w-4xl mx-auto bg-slate-900/20 border border-slate-800 border-dashed rounded-xl p-3 text-[10px]">
+                [ADSENSE MOBILE_SMART_ANCHOR_STICKY_OVERLAY_OVERFLOW_CAPTURE]
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+let coreInvestmentChartInstance = null;
+const UnifiedAppEngine = {
+    formatter: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    runCompoundModel();
+    runMortgageModel();
+    runTradingModel();
+    runTaxModel();
+    bindInteractiveEventCalculationTriggers();
+});
+
+function formatUSDMatrixOutput(value) {
+    if (isNaN(value) || !isFinite(value)) return '$0.00';
+    return UnifiedAppEngine.formatter.format(value);
+}
+function bindInteractiveEventCalculationTriggers() {
+    const inputRegistry = [
+        { id: 'inv-principal', action: runCompoundModel },
+        { id: 'inv-periodic', action: runCompoundModel },
+        { id: 'inv-periodic-freq', action: runCompoundModel },
+        { id: 'inv-rate', action: runCompoundModel },
+        { id: 'inv-years', action: runCompoundModel },
+        { id: 'loan-asset', action: runMortgageModel },
+        { id: 'loan-down', action: runMortgageModel },
+        { id: 'loan-rate', action: runMortgageModel },
+        { id: 'loan-term', action: runMortgageModel },
+        { id: 'trade-equity', action: runTradingModel },
+        { id: 'trade-pct', action: runTradingModel },
+        { id: 'trade-entry', action: runTradingModel },
+        { id: 'trade-stop', action: runTradingModel },
+        { id: 'tax-gross', action: runTaxModel },
+        { id: 'tax-shelter', action: runTaxModel }
+    ];
+    inputRegistry.forEach(nodeItem => {
+        const targetNode = document.getElementById(nodeItem.id);
+        if (targetNode) targetNode.addEventListener('input', nodeItem.action);
+    });
+}
+function runCompoundModel() {
+    const principal = parseFloat(document.getElementById('inv-principal').value) || 0;
+    const periodicContribution = parseFloat(document.getElementById('inv-periodic').value) || 0;
+    const intervalFrequency = parseInt(document.getElementById('inv-periodic-freq').value) || 12;
+    const specifiedRate = (parseFloat(document.getElementById('inv-rate').value) || 0) / 100;
+    const yearsHorizon = parseInt(document.getElementById('inv-years').value) || 5;
+
+    let analyticalValueArrays = [];
+    let horizontalTimeLabels = [];
+    let accountingCompoundAccumulator = principal;
+    let netCapitalInflowPrincipal = principal;
+
+    const aggregateTotalIntervalPeriods = yearsHorizon * intervalFrequency;
+    const internalPeriodicInterestFactor = specifiedRate / intervalFrequency;
+
+    for (let currentStep = 1; currentStep <= aggregateTotalIntervalPeriods; currentStep++) {
+        accountingCompoundAccumulator += periodicContribution;
+        netCapitalInflowPrincipal += periodicContribution;
+        accountingCompoundAccumulator = accountingCompoundAccumulator * (1 + internalPeriodicInterestFactor);
+
+        if (currentStep % intervalFrequency === 0) {
+            analyticalValueArrays.push(Math.round(accountingCompoundAccumulator));
+            horizontalTimeLabels.push(`Year ${currentStep / intervalFrequency}`);
+        }
+    }
+
+    document.getElementById('out-inv-total').innerText = formatUSDMatrixOutput(accountingCompoundAccumulator);
+    document.getElementById('out-inv-interest').innerText = formatUSDMatrixOutput(accountingCompoundAccumulator - netCapitalInflowPrincipal);
+    buildCompoundAnalyticsLineChartGraph(horizontalTimeLabels, analyticalValueArrays);
+}
+function buildCompoundAnalyticsLineChartGraph(labels, dataSet) {
+    const drawingTargetCanvas = document.getElementById('chartInvestmentTimelineMaster');
+    if (!drawingTargetCanvas) return;
+    if (coreInvestmentChartInstance) coreInvestmentChartInstance.destroy();
+
+    coreInvestmentChartInstance = new Chart(drawingTargetCanvas.getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: dataSet, borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.04)', borderWidth: 2.5, fill: true, tension: 0.1, pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+            scales: { x: { grid: { display: false } }, y: { grid: { color: '#334155' } } }
+        }
+    });
+}
+function runMortgageModel() {
+    const capitalAssetCost = parseFloat(document.getElementById('loan-asset').value) || 0;
+    const equityDownPayment = parseFloat(document.getElementById('loan-down').value) || 0;
+    const structuralAnnualRate = (parseFloat(document.getElementById('loan-rate').value) || 0) / 100;
+    const structuralAmortizationTermYears = parseInt(document.getElementById('loan-term').value) || 30;
+
+    const netFinancedDebtPrincipal = capitalAssetCost - equityDownPayment;
+    const computationalMonthlyRate = structuralAnnualRate / 12;
+    const aggregateChronologicalPaymentsCount = structuralAmortizationTermYears * 12;
+    let computedInstallmentValueMonthly = 0;
+
+    if (netFinancedDebtPrincipal > 0 && computationalMonthlyRate > 0) {
+        computedInstallmentValueMonthly = (netFinancedDebtPrincipal * computationalMonthlyRate * Math.pow(1 + computationalMonthlyRate, aggregateChronologicalPaymentsCount)) / (Math.pow(1 + computationalMonthlyRate, aggregateChronologicalPaymentsCount) - 1);
+    }
+
+    document.getElementById('out-loan-monthly').innerText = formatUSDMatrixOutput(computedInstallmentValueMonthly);
+    document.getElementById('out-loan-principal').innerText = formatUSDMatrixOutput(netFinancedDebtPrincipal > 0 ? netFinancedDebtPrincipal : 0);
+    document.getElementById('out-loan-interest').innerText = formatUSDMatrixOutput((computedInstallmentValueMonthly * aggregateChronologicalPaymentsCount) - netFinancedDebtPrincipal);
+}
+function runTradingModel() {
+    const grossEquityCapitalPool = parseFloat(document.getElementById('trade-equity').value) || 0;
+    const maximumPermissibleRiskPct = (parseFloat(document.getElementById('trade-pct').value) || 0) / 100;
+    const marketEntryPriceNode = parseFloat(document.getElementById('trade-entry').value) || 0;
+    const hardStopLossPriceNode = parseFloat(document.getElementById('trade-stop').value) || 0;
+
+    if (marketEntryPriceNode <= hardStopLossPriceNode || marketEntryPriceNode <= 0 || hardStopLossPriceNode <= 0) {
+        document.getElementById('out-trade-units').innerText = "Range Fault Error";
+        document.getElementById('out-trade-exposure').innerText = "\$0.00";
+        return;
+    }
+
+    const totalAllowedDollarRiskExposure = grossEquityCapitalPool * maximumPermissibleRiskPct;
+    const riskPremiumPerIndividualUnit = marketEntryPriceNode - hardStopLossPriceNode;
+    const mathematicallyOptimizedUnitsAllocation = Math.floor(totalAllowedDollarRiskExposure / riskPremiumPerIndividualUnit);
+
+    document.getElementById('out-trade-units').innerText = `${mathematicallyOptimizedUnitsAllocation.toLocaleString()} Units`;
+    document.getElementById('out-trade-exposure').innerText = formatUSDMatrixOutput(mathematicallyOptimizedUnitsAllocation * marketEntryPriceNode);
+}
+function runTaxModel() {
+    const nominalGrossIncomeInput = parseFloat(document.getElementById('tax-gross').value) || 0;
+    const allocationShelterDeductions = parseFloat(document.getElementById('tax-shelter').value) || 0;
+    const resultingAdjustedGrossIncomePool = Math.max(0, nominalGrossIncomeInput - allocationShelterDeductions);
+    
+    document.getElementById('out-tax-agi').innerText = formatUSDMatrixOutput(resultingAdjustedGrossIncomePool);
+
+    const professionalFederalTaxBracketMatrix = [
+        { floor: 0, ceiling: 11600, rate: 0.10 },
+        { floor: 11600, ceiling: 47150, rate: 0.12 },
+        { floor: 47150, ceiling: 100525, rate: 0.22 },
+        { floor: 100525, ceiling: 191950, rate: 0.24 },
+        { floor: 191950, ceiling: Infinity, rate: 0.32 }
+    ];
+
+    let computedRunningTaxLiabilityPool = 0;
+    for (let i = 0; i < professionalFederalTaxBracketMatrix.length; i++) {
+        const bracketNode = professionalFederalTaxBracketMatrix[i];
+        if (resultingAdjustedGrossIncomePool > bracketNode.floor) {
+            const staticTaxableIncomeInCurrentTier = Math.min(resultingAdjustedGrossIncomePool, bracketNode.ceiling) - bracketNode.floor;
+            computedRunningTaxLiabilityPool += staticTaxableIncomeInCurrentTier * bracketNode.rate;
+        } else { break; }
+    }
+
+    const netAnnualLiquidTakeHome = resultingAdjustedGrossIncomePool - computedRunningTaxLiabilityPool;
+    document.getElementById('out-tax-liability').innerText = `-${formatUSDMatrixOutput(computedRunningTaxLiabilityPool)}`;
+    document.getElementById('out-tax-net-annual').innerText = formatUSDMatrixOutput(netAnnualLiquidTakeHome);
+    document.getElementById('out-tax-net-monthly').innerText = formatUSDMatrixOutput(netAnnualLiquidTakeHome / 12);
+}
+.adsense-container {
+    transition: all 0.3s ease;
+}
+.adsense-container:hover {
+    border-color: #1e293b;
+    background-color: #020617;
+}
+input, select {
+    transition: all 0.2s ease;
+    outline: none;
+}
+input:focus, select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
